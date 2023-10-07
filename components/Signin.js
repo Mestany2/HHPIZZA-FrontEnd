@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
+import logo from '../Images/hhpw-record.png';
 import { signIn } from '../utils/auth';
 
 function Signin() {
@@ -17,11 +18,18 @@ function Signin() {
         paddingBlock: '0 5rem',
       }}
     >
-      <h1>Hi there!</h1>
-      <p>Click the button below to login!</p>
-      <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
-        Sign In
-      </Button>
+      <div>
+        <div id="text-style">
+          <h1 id="welcome-title"> Welcome to Hip-Hop Pizza and Wangs</h1>
+          <Image src={logo} alt="store logo" />
+          <div id="login-button"><div />
+          </div>
+          <br />
+        </div>
+        <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
+          Sign In
+        </Button>
+      </div>
     </div>
   );
 }
