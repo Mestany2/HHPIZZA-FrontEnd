@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Image } from 'react-bootstrap';
-import logo from '../Images/hhpw-record.png';
+import { logo } from '../Images/hhpw-record.png';
 import { signIn } from '../utils/auth';
 
 function Signin() {

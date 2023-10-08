@@ -7,14 +7,16 @@ import {
   Nav,
   Button,
 } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
 import { signOut } from '../utils/auth';
+import logo from '../Images/hhpw-record.png';
 
 export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>CHANGE ME</Navbar.Brand>
+          <Image src={logo} alt="logo" />
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -23,12 +25,20 @@ export default function NavBar() {
             <Link passHref href="/">
               <Nav.Link>Home</Nav.Link>
             </Link>
-            <Link passHref href="/delete-me">
-              <Nav.Link>Delete Me</Nav.Link>
+            <Link passHref href="/OrderPage">
+              <Nav.Link>View Order</Nav.Link>
             </Link>
+            <Link passHref href="/CreateOrderForm">
+              <Nav.Link>Create an Order</Nav.Link>
+            </Link>
+            <Link passHref href="/delete-me">
+              <Nav.Link>View Revenue</Nav.Link>
+            </Link>
+
             <Button variant="danger" onClick={signOut}>
               Sign Out
             </Button>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
