@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Image } from 'react-bootstrap';
-import { logo } from '../Images/hhpw-record.png';
 import { signIn } from '../utils/auth';
 
 function Signin() {
@@ -21,7 +20,7 @@ function Signin() {
       <div>
         <div id="text-style">
           <h1 id="welcome-title"> Welcome to Hip-Hop Pizza and Wangs</h1>
-          <Image src={logo} alt="store logo" />
+          <Image src="./hhplogo.jpg" alt="store logo" style={{ width: 500, marginTop: 5, marginLeft: 0 }} />
           <div id="login-button"><div />
           </div>
           <br />
