@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { checkUser, signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
 import RegisterForm from '../components/RegisterForm';
@@ -33,13 +34,19 @@ function Home() {
           <h1 className="word" data-animation="slide" id="welcome-title"> Welcome {user.fbUser.displayName}!</h1>
 
           <br />
-          <Button type="button" className="btn btn-success btn-lg btn-3" id="view-order">View Orders</Button>
+          <Link passHref href="/OrderPage">
+            <Button type="button" className="btn btn-success btn-lg btn-3" id="view-order">View Orders</Button>
+          </Link>
           <br />
           <br />
-          <Button type="button" className="btn btn-success btn-lg btn-3" id="create-order-landing">Create an Order</Button>
+          <Link passHref href="/CreateOrderForm">
+            <Button type="button" className="btn btn-success btn-lg btn-3" id="create-order-landing">Create an Order</Button>
+          </Link>
           <br />
           <br />
-          <Button type="button" className="btn btn-success btn-lg btn-3" id="view-rev">View Revenue</Button>
+          <Link passHref href="/OrderPage">
+            <Button type="button" className="btn btn-success btn-lg btn-3" id="view-rev">View Revenue</Button>
+          </Link>
           <br />
           <br />
           <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
