@@ -29,7 +29,7 @@ export default function NavBar() {
             <Link passHref href="/CreateOrderForm">
               <Nav.Link>Create an Order</Nav.Link>
             </Link>
-            <Link passHref href="/delete-me">
+            <Link passHref href="/Revenue">
               <Nav.Link>View Revenue</Nav.Link>
             </Link>
 

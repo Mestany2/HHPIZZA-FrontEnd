@@ -15,6 +15,9 @@ export default function OrderPage() {
 
   return (
     <>
+      <br />
+      <h1 id="welcome-title"> My Orders</h1>
+      <br />
       <div className="feed-page-cont d-flex flex-wrap justify-content-center align-content-center text-center">
         {orders.map((obj) => <OrderCard orderObj={obj} onUpdate={getUserOrders} />)}
       </div>

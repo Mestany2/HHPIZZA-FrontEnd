@@ -42,8 +42,21 @@ const deleteOrder = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getOrders = () => new Promise((resolve, reject) => {
+  fetch(`${clientCredentials.databaseURL}/api/allOrders`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve((data)))
+    .catch(reject);
+});
+
 export {
   getUserOrders,
   deleteOrder,
   createOrder,
+  getOrders,
 };

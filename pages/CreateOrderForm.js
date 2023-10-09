@@ -25,6 +25,9 @@ function CreateOrderForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
+        <br />
+        <h1 id="welcome-title"> Create An Order </h1>
+        <br />
         <Form.Label>Order Name</Form.Label>
         <Form.Control as="textarea" name="Name" required placeholder=" Name" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
         <Form.Label>Phone</Form.Label>
