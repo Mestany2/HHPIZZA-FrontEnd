@@ -19,7 +19,8 @@ export default function Revenue() {
         const allTips = orders.filter((order) => order.tip_amount);
         const tipsTotal = allTips.reduce((a, b) => a + b.tip_amount, 0);
         const totalRev = ordersTotal + tipsTotal;
-        setTotRevenue(totalRev);
+        const finalTotal = totalRev.toFixed(2);
+        setTotRevenue(finalTotal);
       });
     });
   };

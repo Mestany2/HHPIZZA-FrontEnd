@@ -20,6 +20,15 @@ export default function OrderCard({ orderObj, onUpdate }) {
     });
   };
 
+  const viewItems = () => {
+    router.push({
+      pathname: '/ItemPage',
+      query: {
+        orderObj: JSON.stringify(orderObj),
+      },
+    });
+  };
+
   return (
     <div id="order-card" className="card">
       <div className="card-body">
@@ -29,7 +38,7 @@ export default function OrderCard({ orderObj, onUpdate }) {
         <p className="card-text bold"><b>Order Status:</b> {orderObj.status}</p>
         <p className="card-text bold"><b>Order Type:</b> {orderObj.orderType}</p>
         <hr />
-        <i id="view-details-btn" className=" btn btn-success">View</i>
+        <button type="button" id="view-details-btn" className=" btn btn-success" onClick={viewItems}>View</button>
         <button type="button" id="edit-order-btn" className=" btn btn-info" onClick={updateForm}>Edit</button>
         <button type="button" id="delete-order-btn" className="btn btn-danger" onClick={deleteTheOrder}>Delete</button>
       </div>

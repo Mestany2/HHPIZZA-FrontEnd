@@ -221,7 +221,7 @@ backdrop-filter: blur(0px); background-color: rgba(255, 255, 255, 0.2); border-r
 
 .items-add-btn{
   display: block;
-  margin: 30px 800px 10px 800px;
+  margin: 30px 800px 10px 480px;
 }
 
 #form-container{
