@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Button, Form } from 'react-bootstrap';
+import { addReview } from '../Api/ReviewCalls';
 
-import addReview from '../Api/ReviewCalls';
-
-export default function ItemPage() {
+export default function ReviewPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({ });
 
