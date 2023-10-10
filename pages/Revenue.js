@@ -89,7 +89,7 @@ export default function Revenue() {
             <div className="card blue">
               <div className="title">Total Revenue</div>
               <i className="zmdi zmdi-upload" />
-              <h5 className="value" id="totalRev">{totRevenue}</h5>
+              <h5 className="value" id="totalRev">${totRevenue}</h5>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">

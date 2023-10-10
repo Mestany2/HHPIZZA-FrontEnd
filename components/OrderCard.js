@@ -20,6 +20,24 @@ export default function OrderCard({ orderObj, onUpdate }) {
     });
   };
 
+  const viewReview = () => {
+    router.push({
+      pathname: '/ReviewPage',
+      query: {
+        orderObj: JSON.stringify(orderObj),
+      },
+    });
+  };
+
+  const reviewOrder = () => {
+    router.push({
+      pathname: '/ReviewForm',
+      query: {
+        orderObj: JSON.stringify(orderObj),
+      },
+    });
+  };
+
   const viewItems = () => {
     router.push({
       pathname: '/ItemPage',
@@ -46,6 +64,21 @@ export default function OrderCard({ orderObj, onUpdate }) {
       </div>
     );
   }
+  if (orderObj.reviewId) {
+    return (
+      <div id="closed-card" className="card">
+        <div className="card-body">
+          <h5 className="card-title"><b>Order#:</b> {orderObj.id}</h5>
+          <h5 className="card-title"><b>Name:</b> {orderObj.name}</h5>
+          <p className="card-text bold"><b>Email:</b> {orderObj.email}</p>
+          <p className="card-text bold"><b>Phone Number:</b> {orderObj.phone}</p>
+          <p className="card-text bold"><b>Order Status:</b> {orderObj.status}</p>
+          <p className="card-text bold"><b>Order Type:</b> {orderObj.orderType}</p>
+          <button type="button" id="view-details-btn" className=" btn btn-secondary" onClick={viewReview}>View Review</button>
+        </div>
+      </div>
+    );
+  }
   return (
     <div id="closed-card" className="card">
       <div className="card-body">
@@ -55,6 +88,8 @@ export default function OrderCard({ orderObj, onUpdate }) {
         <p className="card-text bold"><b>Phone Number:</b> {orderObj.phone}</p>
         <p className="card-text bold"><b>Order Status:</b> {orderObj.status}</p>
         <p className="card-text bold"><b>Order Type:</b> {orderObj.orderType}</p>
+        <hr />
+        <button type="button" id="view-details-btn" className=" btn btn-primary" onClick={reviewOrder}>Add a Review</button>
       </div>
     </div>
   );
@@ -68,6 +103,7 @@ OrderCard.propTypes = {
     phone: PropTypes.string,
     status: PropTypes.string,
     orderType: PropTypes.string,
+    reviewId: PropTypes.number,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
