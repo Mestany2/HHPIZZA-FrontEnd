@@ -26,6 +26,13 @@ body {
 #order-card {
   height: 325px;
   width: 300px;
+  background-color:lightgreen;
+}
+
+#closed-card {
+  height: 325px;
+  width: 300px;
+  background-color:lightcoral;
 }
 #welcome-title {
   font-family: 'Impact';

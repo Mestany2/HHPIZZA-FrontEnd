@@ -28,19 +28,33 @@ export default function OrderCard({ orderObj, onUpdate }) {
       },
     });
   };
-
+  if (orderObj.status === 'open') {
+    return (
+      <div id="order-card" className="card">
+        <div className="card-body">
+          <h5 className="card-title"><b>Order#:</b> {orderObj.id}</h5>
+          <h5 className="card-title"><b>Name:</b> {orderObj.name}</h5>
+          <p className="card-text bold"><b>Email:</b> {orderObj.email}</p>
+          <p className="card-text bold"><b>Phone Number:</b> {orderObj.phone}</p>
+          <p className="card-text bold"><b>Order Status:</b> {orderObj.status}</p>
+          <p className="card-text bold"><b>Order Type:</b> {orderObj.orderType}</p>
+          <hr />
+          <button type="button" id="view-details-btn" className=" btn btn-success" onClick={viewItems}>View</button>
+          <button type="button" id="edit-order-btn" className=" btn btn-info" onClick={updateForm}>Edit</button>
+          <button type="button" id="delete-order-btn" className="btn btn-danger" onClick={deleteTheOrder}>Delete</button>
+        </div>
+      </div>
+    );
+  }
   return (
-    <div id="order-card" className="card">
+    <div id="closed-card" className="card">
       <div className="card-body">
+        <h5 className="card-title"><b>Order#:</b> {orderObj.id}</h5>
         <h5 className="card-title"><b>Name:</b> {orderObj.name}</h5>
         <p className="card-text bold"><b>Email:</b> {orderObj.email}</p>
         <p className="card-text bold"><b>Phone Number:</b> {orderObj.phone}</p>
         <p className="card-text bold"><b>Order Status:</b> {orderObj.status}</p>
         <p className="card-text bold"><b>Order Type:</b> {orderObj.orderType}</p>
-        <hr />
-        <button type="button" id="view-details-btn" className=" btn btn-success" onClick={viewItems}>View</button>
-        <button type="button" id="edit-order-btn" className=" btn btn-info" onClick={updateForm}>Edit</button>
-        <button type="button" id="delete-order-btn" className="btn btn-danger" onClick={deleteTheOrder}>Delete</button>
       </div>
     </div>
   );
