@@ -20,7 +20,7 @@ export default function ReviewPage() {
       <br />
       <h1 id="welcome-title"> Order Review</h1>
       <br />
-      <div id="text-style" className="items-add-btn">
+      <div id="text-style">
         <div className="feed-page-cont d-flex flex-wrap justify-content-center align-content-center text-center">
           <ReviewCard reviewObj={review} />
         </div>

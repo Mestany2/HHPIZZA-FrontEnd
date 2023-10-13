@@ -9,7 +9,7 @@ export default function ItemPage() {
 
   const updateItems = () => {
     const orderObj = JSON.parse(router.query.orderObj);
-    getOrderItems(orderObj.id)?.then((data) => {
+    getOrderItems(orderObj?.id)?.then((data) => {
       setItems(data);
     });
   };
