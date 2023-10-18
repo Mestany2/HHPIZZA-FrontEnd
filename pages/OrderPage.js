@@ -8,7 +8,7 @@ export default function OrderPage() {
   const [orders, setOrders] = useState([]);
 
   const updateOrders = () => {
-    getUserOrders(user[0].id)?.then((data) => {
+    getUserOrders(user[0]?.id)?.then((data) => {
       setOrders(data);
     });
   };
@@ -22,7 +22,7 @@ export default function OrderPage() {
   return (
     <>
       <br />
-      <h1 id="welcome-title"> My Orders</h1>
+      <h1 id="welcome-title"> Orders</h1>
       <br />
       <div>
         <h3 id="welcome-title"> Open Orders</h3>

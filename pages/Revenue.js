@@ -29,7 +29,8 @@ export default function Revenue() {
     getOrders().then((orders) => {
       const tipsClosed = orders.filter((order) => order.tip);
       const tipsTotalAmount = tipsClosed.reduce((a, b) => a + b.tip, 0);
-      setTips(tipsTotalAmount);
+      const finalTip = tipsTotalAmount.toFixed(2);
+      setTips(finalTip);
     });
   };
   const totalCallinOrders = () => {

@@ -35,7 +35,6 @@ function CreateOrderForm() {
       const payload = {
         ...formData, UserId: user[0].id, Status: 'open',
       };
-      console.warn('my payload', payload);
       createOrder(payload);
       router.push('/OrderPage');
     }
