@@ -26,6 +26,13 @@ body {
 #order-card {
   height: 325px;
   width: 300px;
+  background-color:lightgreen;
+}
+
+#closed-card {
+  height: 325px;
+  width: 300px;
+  background-color:lightcoral;
 }
 #welcome-title {
   font-family: 'Impact';
@@ -218,13 +225,66 @@ backdrop-filter: blur(0px); background-color: rgba(255, 255, 255, 0.2); border-r
 	position: relative;
   margin: 10px;
 }
+#review-card{
+
+  background-color: white;
+  color:#08090a;
+  border-radius: 8px;
+	padding: 50px;
+	position: relative;
+  margin: 20px;
+  margin-left: 50px;
+  background-color:lightgray;
+}
 
 .items-add-btn{
   display: block;
-  margin: 30px 800px 10px 800px;
+  margin: 30px 800px 10px 480px;
 }
 
 #form-container{
   padding-top: 20px;
   color: white;
 }
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.rate {
+  height: 46px;
+  padding: 0 10px;
+  margin-right: 35rem;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -9,14 +8,13 @@ import {
 } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import { signOut } from '../utils/auth';
-import logo from '../Images/hhpw-record.png';
 
 export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Image src={logo} alt="logo" />
+          <Image src="./hhplogo.jpg" alt="logo" style={{ width: 50, marginTop: 5, marginLeft: 0 }} />
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -31,7 +29,7 @@ export default function NavBar() {
             <Link passHref href="/CreateOrderForm">
               <Nav.Link>Create an Order</Nav.Link>
             </Link>
-            <Link passHref href="/delete-me">
+            <Link passHref href="/Revenue">
               <Nav.Link>View Revenue</Nav.Link>
             </Link>
 
